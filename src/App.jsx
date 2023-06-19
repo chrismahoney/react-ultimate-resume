@@ -22,7 +22,7 @@ const mergeFunction = (objValue, srcValue) => {
     return undefined;
 };
 
-const mode = process.env.REACT_APP_MODE || 'edit';
+const mode = process.env.REACT_APP_MODE || 'readOnly';
 
 function App() {
     const classes = useStyles();
@@ -49,7 +49,7 @@ function App() {
 
     return (
         <DeveloperProfile
-            mode={'edit'}
+            mode={mode}
             data={data}
             onEdit={onEdit}
             onCustomizationChanged={onCustomizationChanged}
@@ -69,7 +69,7 @@ function App() {
                 disableSortableExperience: false,
                 maxCardsPerRow: 3,
                 referenceData: {
-                    professions: ['Developpeur Front-End', 'Développeur Back-End']
+                    professions: ['Developer Front-End', 'Developer Back-End']
                 }
             }}
             additionalNodes={{
